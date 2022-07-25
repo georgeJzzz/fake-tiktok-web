@@ -14,6 +14,15 @@
   <meta data-rh="true" name="robots" content="index, follow" />
   <meta data-rh="true" name="applicable-device" content="pc, mobile" />
   <meta data-rh="true" property="og:url" content="https://www.tiktok.com/" />
+  <script>
+    window.$fetch = window.fetch
+    window.fetch = (url, options) => {
+      if (options && options.idle) {
+        return Promise.resolve(url)
+      }
+      return window.$fetch(url, options)
+    }
+  </script>
   <script type="text/javascript" src="https://s20.tiktokcdn.com/tiktok/common/init.js?cache"
     nonce="Hyd3zLIVzkGaKu4vk7bYO"></script>
   <script
