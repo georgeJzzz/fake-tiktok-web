@@ -6,9 +6,10 @@ const fs = require('fs')
 
 const app = express();
 
-app.use('/aweme', createProxyMiddleware({ target: 'https://www.douyin.com', changeOrigin: true }));
-app.use('/passport', createProxyMiddleware({ target: 'https://www.douyin.com', changeOrigin: true }));
-app.use('/discover', createProxyMiddleware({ target: 'https://www.douyin.com', changeOrigin: true }));
+app.use('/api', createProxyMiddleware({ target: 'https://www.tiktok.com', changeOrigin: false }));
+app.use('/node', createProxyMiddleware({ target: 'https://www.tiktok.com', changeOrigin: false }));
+app.use('/ttwid', createProxyMiddleware({ target: 'https://www.tiktok.com', changeOrigin: false }));
+app.use('/passport', createProxyMiddleware({ target: 'https://www.tiktok.com', changeOrigin: false }));
 app.use(express.static('./'))
 
 
